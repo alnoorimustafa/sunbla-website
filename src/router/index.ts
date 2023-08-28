@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import AppVue from '@/App.vue'
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory('/sunbla-website/'),
   routes: [
     {
       path: '/',

@@ -2,7 +2,7 @@
   "name": "sunbla-web",
   "version": "0.0.0",
   "private": true,
-  "homepage": "https://alnoorimustafa.github.io",
+  "homepage": "https://alnoorimustafa.github.io/sunbla-website/",
   "scripts": {
     "deploy": "vite build && cd dist && copy index.html 404.html && cd .. && gh-pages -d dist",
     "dev": "vite",
