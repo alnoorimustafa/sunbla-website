@@ -2,7 +2,7 @@
   "name": "sunbla-web",
   "version": "0.0.0",
   "private": true,
-  "homepage": "https://alnoorimustafa.github.io/sunbla-website/",
+  "homepage": "/sunbla-website",
   "scripts": {
     "deploy": "vite build && cd dist && copy index.html 404.html && cd .. && gh-pages -d dist",
     "dev": "vite",
@@ -14,6 +14,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@types/vue-router": "^2.0.0",
     "@popperjs/core": "^2.11.8",
     "bootstrap": "5.2.3",
     "gh-pages": "^6.0.0",
