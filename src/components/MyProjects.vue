@@ -2,15 +2,20 @@
 import ProjectCard from './ProjectCard.vue'
 </script>
 
+<script lang="ts">
+import { defineComponent } from 'vue'
+
+export default defineComponent({
+  // Component options
+})
+</script>
+
 <template>
   <div class="p-5 text-center">
     <p class="text-gold">مشاريعنا</p>
     <h1 class="">كيف نحاول التغيير ؟</h1>
-    <p class="m-auto col-md-8 col-sm-12">
-      بدأنا بمجموعة من المشاريع التي نعتقد انها ذات تأثير كبير
-    </p>
 
-    <div class="projects">
+    <div class="mt-5rem">
       <div class="row justify-content-around">
         <ProjectCard
           title="القرض الحسن"
@@ -34,9 +39,3 @@ import ProjectCard from './ProjectCard.vue'
     </div>
   </div>
 </template>
-
-<style>
-.projects {
-  margin-top: 5rem;
-}
-</style>

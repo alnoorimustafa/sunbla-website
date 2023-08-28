@@ -8,8 +8,8 @@
           ومستدام في المجتمع
         </p>
       </div>
-      <div class="col-md-6 mt-4">
-        <img src="../assets/triangle.png" alt="Image" class="img-fluid" />
+      <div class="col-xxl-4 col-md-6 mt-4">
+        <img src="../assets/triangle.png" alt="Image" class="img-fluid image" />
       </div>
     </div>
   </div>
@@ -18,5 +18,8 @@
 <style>
 .title {
   font-size: 48px;
+}
+.image {
+  max-width: 90%;
 }
 </style>

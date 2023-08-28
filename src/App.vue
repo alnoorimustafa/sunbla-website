@@ -3,6 +3,9 @@ import MyHeader from './components/MyHeader.vue'
 import MyHero from './components/MyHero.vue'
 import AboutUs from './components/AboutUs.vue'
 import MyProjects from './components/MyProjects.vue'
+import OurValues from './components/OurValues.vue'
+import OurAdvantage from './components/OurAdvantage.vue'
+import OurServices from './components/OurServices.vue'
 </script>
 
 <template>
@@ -12,6 +15,9 @@ import MyProjects from './components/MyProjects.vue'
       <MyHero />
       <AboutUs />
       <MyProjects />
+      <OurValues />
+      <OurServices />
+      <OurAdvantage />
     </div>
   </div>
 </template>
@@ -82,5 +88,9 @@ p {
   padding-right: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+.mt-5rem {
+  margin-top: 5rem;
 }
 </style>
