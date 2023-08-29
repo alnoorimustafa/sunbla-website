@@ -5,7 +5,7 @@ import MyFooter from './components/MyFooter.vue'
 </script>
 
 <template>
-  <div dir="rtl" lang="ar">
+  <div dir="rtl" lang="ar" class="no">
     <MyHeader />
     <router-view />
     <MyFooter />
@@ -24,6 +24,11 @@ import MyFooter from './components/MyFooter.vue'
 @font-face {
   font-family: qrn;
   src: url(./assets/fonts/Amiri-regular.ttf);
+}
+
+.no {
+  width: 100%;
+  overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
 p,
