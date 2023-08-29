@@ -16,8 +16,8 @@ export default defineComponent({
 
 <template>
   <div class="p-5 text-center green text-white">
-    <p class="text-gold">ما الذي يوجهنا ؟</p>
-    <h1 class="fs-2">مبادئ وقيم المؤسسة</h1>
+    <p class="text-gold fs-6">قيمنا</p>
+    <h1 class="fs-2">ما الذي يوجهنا ؟</h1>
 
     <div class="mt-5rem">
       <div class="row justify-content-around">

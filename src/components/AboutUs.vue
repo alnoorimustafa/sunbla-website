@@ -1,6 +1,6 @@
 <template>
   <div class="p-5 text-center text-white green">
-    <p class="fs-6 text-gold">رؤيتنا</p>
+    <p class="fs-6 text-gold">قصتنا</p>
     <h1 class="fs-2">من نحن ؟</h1>
     <div class="mt-5">
       <p class="fs-5 m-auto col-md-8 col-sm-12">
@@ -8,7 +8,7 @@
         انطلاقا من حسه بالمسؤولية بتصور يجمع بين اصالة الفكر الاسلامي والأساليب العلمية والحديثة من
         خلال وعيهم الاسلامي وتجربتهم الاكاديمية
       </p>
-      <button class="btn text-white mt-4 blue">اعرف اكثر</button>
+      <button class="btn text-white mt-5 blue">اعرف اكثر</button>
     </div>
   </div>
 </template>

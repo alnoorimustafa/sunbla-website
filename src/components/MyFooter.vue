@@ -10,9 +10,19 @@
       </div>
 
       <div class="p-2">
-        <a href="" class="me-4"> <i class="text-secondary fs-3 lab la-facebook"></i> </a>
-        <a href="" class="me-4"> <i class="text-secondary fs-3 lab la-instagram"></i> </a>
-        <a href="" class="me-4"> <i class="text-secondary fs-3 lab la-youtube"></i> </a>
+        <a
+          href="https://www.facebook.com/people/%D9%85%D8%A4%D8%B3%D8%B3%D8%A9-%D8%B3%D9%86%D8%A8%D9%84%D8%A9-%D8%A7%D9%84%D8%AD%D9%8A%D8%A7%D8%A9/100080189049993/"
+          class="me-4"
+        >
+          <i class="text-secondary fs-3 lab la-facebook"></i>
+        </a>
+        <a href="https://www.instagram.com/sunbla_alhayat/?igshid=YmMyMTA2M2Y=" class="me-4">
+          <i class="text-secondary fs-3 la la-instagram"></i>
+        </a>
+        <a href="" class="me-4"> <i class="text-secondary fs-3 la la-youtube"></i> </a>
+        <a href="tel:+9647854041609" class="me-4">
+          <i class="text-secondary fs-3 la la-phone"></i>
+        </a>
       </div>
     </section>
     <!-- Section: Social media -->
@@ -23,7 +33,7 @@
         <!-- Grid row -->
         <div class="row mt-3">
           <!-- Grid column -->
-          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4 text-center">
             <!-- Content -->
             <a class="navbar-brand" href="#">
               <img src="../assets/logo.png" alt="Logo" width="50" />

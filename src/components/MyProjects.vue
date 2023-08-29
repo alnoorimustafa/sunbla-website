@@ -12,11 +12,20 @@ export default defineComponent({
 
 <template>
   <div class="p-5 text-center">
-    <p class="text-gold">مشاريعنا</p>
-    <h1 class="">كيف نحاول التغيير ؟</h1>
+    <p class="fs-6 text-gold">برامجنا</p>
+    <h1 class="fs-2">كيف نحاول التغيير ؟</h1>
 
     <div class="mt-5rem">
       <div class="row justify-content-around">
+        <div class="row">
+          <div class="col-6">
+            <h1>title</h1>
+            <p>subtitle</p>
+          </div>
+          <div class="col-6">
+            <img height="100%" src="triangle.png" alt="Image" class="img-fluid image" />
+          </div>
+        </div>
         <ProjectCard
           title="القرض الحسن"
           subtitle="نموذج تمويل إسلامي يهدف إلى دعم مشاريع الشباب الإنتاجية كبديل اخلاقي ومبتكر للقروض التقليدية."
