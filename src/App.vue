@@ -84,9 +84,6 @@ p {
   padding-bottom: 10px;
 }
 
-.mt-5rem {
-  margin-top: 5rem;
-}
 .quran {
   font-family: qrn;
   line-height: 2.5;

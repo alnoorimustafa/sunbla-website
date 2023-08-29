@@ -15,7 +15,7 @@ export default defineComponent({
     <p class="fs-6 text-gold">برامجنا</p>
     <h1 class="fs-2">كيف نحاول التغيير ؟</h1>
 
-    <div class="mt-5rem">
+    <div class="mt-5">
       <div class="row justify-content-around">
         <ContentBlock
           :showBtn="true"

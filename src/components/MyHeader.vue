@@ -3,7 +3,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container">
         <a class="navbar-brand" href="#">
-          <img src="logo.png" alt="Logo" width="40" />
+          <img src="/logo.png" alt="Logo" width="40" />
         </a>
         <button
           class="navbar-toggler"

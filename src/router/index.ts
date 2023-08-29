@@ -14,6 +14,10 @@ import ContactUs from '@/components/ContactUs.vue'
 
 const router = createRouter({
   history: createWebHistory(),
+  scrollBehavior(to, from, savedPosition) {
+    // always scroll to top
+    return { top: 0 }
+  },
   routes: [
     {
       path: '/',

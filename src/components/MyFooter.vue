@@ -29,7 +29,7 @@
         <div class="row mt-3">
           <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4 text-center">
             <a class="navbar-brand" href="#">
-              <img src="logo.png" alt="Logo" width="50" />
+              <img src="/logo.png" alt="Logo" width="50" />
             </a>
             <h6 class="my-4">مؤسسة سنبلة الحياة</h6>
           </div>

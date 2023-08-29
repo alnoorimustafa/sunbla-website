@@ -12,40 +12,35 @@ export default {
 </script>
 
 <template>
-  <div class="content-block container p-5 justify-content-center align-items-center">
-    <div class="content-column">
-      <img :src="image" />
-    </div>
-    <div class="content-column">
-      <h2 :class="size" class="mb-4">{{ title }}</h2>
-      <p class="mb-4 text-secondary">
-        {{ subtitle }}
-      </p>
-      <div :class="showBtn ? '' : 'd-none'">
-        <router-link :to="link || ''">
-          <a href="" class="btn blue text-white">اعرف اكثر</a>
-        </router-link>
+  <div class="container">
+    <div class="row justify-content-center align-items-center">
+      <div class="col-lg-4 col-sm-12 my-4">
+        <div class="image">
+          <img :src="image" />
+        </div>
+      </div>
+      <div class="col-lg-4 col-sm-12">
+        <h3 :class="size" class="fs-5 mb-4">{{ title }}</h3>
+        <p class="mb-4 text-secondary">
+          {{ subtitle }}
+        </p>
+        <div :class="showBtn ? '' : 'd-none'">
+          <router-link :to="link || ''">
+            <a href="" class="btn blue text-white mb-4">اعرف اكثر</a>
+          </router-link>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <style>
-.content-block {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.content-column {
-  flex: 0 0 calc(50% - 20px);
-  padding: 20px;
+.image img {
   box-sizing: border-box;
-}
-
-.content-column img {
   border-radius: 20px;
   max-width: 100%;
   height: auto;
+  object-fit: fill;
 }
 
 @media (max-width: 767px) {

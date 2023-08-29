@@ -19,7 +19,7 @@ export default defineComponent({
     <p class="text-gold fs-6">قيمنا</p>
     <h1 class="fs-2">ما الذي يوجهنا ؟</h1>
 
-    <div class="mt-5rem">
+    <div class="mt-5">
       <div class="row justify-content-around">
         <MyCard
           :my-class="myClass"

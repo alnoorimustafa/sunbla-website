@@ -1,13 +1,13 @@
 <script lang="ts" setup>
-import ContentBlock from '@/components/ContentBlock.vue'
+import ContentBlock from '../components/ContentBlock.vue'
 </script>
 
 <template>
   <div class="container p-5">
     <router-link to="/">
-      <button class="btn btn-dark">الرجوع</button>
+      <button class="btn btn-dark mb-5">الرجوع</button>
     </router-link>
-    <h1 class="text-center mb-4">منصة سنبلة</h1>
+    <h1 class="fs-1 text-center mb-4">منصة سنبلة</h1>
     <p>
       في عصر يتسم بالتقدم التكنولوجي والتركيز المتزايد على المشاركة المدنية، أحدث ظهور تطبيقات
       العرائض ثورة في الطريقة التي يعبر بها الناس عن مخاوفهم، ويدافعون عن التغيير، ويحشدون الدعم
@@ -64,7 +64,7 @@ import ContentBlock from '@/components/ContentBlock.vue'
       تغيير إيجابي ومحاسبة المؤسسات جانبًا مقنعًا وديناميكيًا للمشاركة المدنية المعاصرة.
     </p>
     <hr class="my-5" />
-    <h1 class="text-center">بعض جوانب التطبيق</h1>
+    <h1 class="fs-1 text-center">بعض جوانب التطبيق</h1>
     <div class="row">
       <div class="col-lg-6 col-sm-12">
         <ContentBlock

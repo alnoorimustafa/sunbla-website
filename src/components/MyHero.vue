@@ -9,7 +9,7 @@
         </p>
       </div>
       <div class="col-xxl-4 col-md-6 mt-4">
-        <img width="100%" src="triangle.png" alt="Image" class="img-fluid image" />
+        <img width="100%" src="/triangle.png" alt="Image" class="img-fluid image" />
       </div>
     </div>
   </div>
