@@ -12,7 +12,9 @@
       <p class="fs-5 m-auto col-md-8 col-sm-12">
         لذلك فان كل مشروع داخل المؤسسة يديره فريق يمثل ذلك المشروع عمق رسالته في المجتمع.
       </p>
-      <button class="btn text-white mt-4 blue">اعرف اكثر</button>
+      <router-link to="our-advantage">
+        <button class="btn text-white mt-4 blue">اعرف اكثر</button>
+      </router-link>
     </div>
   </div>
 </template>

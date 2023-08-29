@@ -1,7 +1,5 @@
 <template>
-  <!-- Footer -->
   <footer class="text-center text-lg-start text-muted">
-    <!-- Section: Social media -->
     <section
       class="container d-flex justify-content-center justify-content-lg-between align-items-center border-bottom"
     >
@@ -25,32 +23,22 @@
         </a>
       </div>
     </section>
-    <!-- Section: Social media -->
 
-    <!-- Section: Links  -->
     <section class="">
       <div class="container text-center text-md-start mt-5">
-        <!-- Grid row -->
         <div class="row mt-3">
-          <!-- Grid column -->
           <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4 text-center">
-            <!-- Content -->
             <a class="navbar-brand" href="#">
-              <img src="../assets/logo.png" alt="Logo" width="50" />
+              <img src="logo.png" alt="Logo" width="50" />
             </a>
             <h6 class="my-4">مؤسسة سنبلة الحياة</h6>
           </div>
         </div>
-        <!-- Grid row -->
       </div>
     </section>
-    <!-- Section: Links  -->
 
-    <!-- Copyright -->
     <div class="text-center p-2 border-top">
       <p class="fs-6">© 2023 حقوق النشر محفوظة : مؤسسة سنبلة الحياة</p>
     </div>
-    <!-- Copyright -->
   </footer>
-  <!-- Footer -->
 </template>

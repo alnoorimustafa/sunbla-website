@@ -1,29 +1,13 @@
 <script setup lang="ts">
 import MyHeader from './components/MyHeader.vue'
-import MyHero from './components/MyHero.vue'
-import AboutUs from './components/AboutUs.vue'
-import MyProjects from './components/MyProjects.vue'
-import OurValues from './components/OurValues.vue'
-import OurServices from './components/OurServices.vue'
-import OurAdvantage from './components/OurAdvantage.vue'
-import ReadyTo from './components/ReadyTo.vue'
-import ContactUs from './components/ContactUs.vue'
+
 import MyFooter from './components/MyFooter.vue'
 </script>
 
 <template>
   <div dir="rtl" lang="ar">
     <MyHeader />
-    <div class="">
-      <MyHero />
-      <AboutUs />
-      <MyProjects />
-      <OurValues />
-      <OurServices />
-      <OurAdvantage />
-      <ReadyTo />
-      <ContactUs />
-    </div>
+    <router-view />
     <MyFooter />
   </div>
 </template>

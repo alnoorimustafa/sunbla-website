@@ -6,9 +6,11 @@
       <p class="fs-5 m-auto col-md-8 col-sm-12">
         مجموعة من الشباب الواعي الذي يجد نفسه في حركته تجاه امته، ويحاول مقاربة المشاكل الاجتماعية
         انطلاقا من حسه بالمسؤولية بتصور يجمع بين اصالة الفكر الاسلامي والأساليب العلمية والحديثة من
-        خلال وعيهم الاسلامي وتجربتهم الاكاديمية
+        خلال وعيهم الديني وتجربتهم الاكاديمية
       </p>
-      <button class="btn text-white mt-5 blue">اعرف اكثر</button>
+      <router-link to="about-us">
+        <button class="btn text-white mt-5 blue">اعرف اكثر</button>
+      </router-link>
     </div>
   </div>
 </template>
