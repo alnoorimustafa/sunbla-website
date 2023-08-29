@@ -4,7 +4,9 @@ export default {
     title: String,
     subtitle: String,
     image: String,
-    link: String
+    link: String,
+    showBtn: Boolean,
+    size: String
   }
 }
 </script>
@@ -15,13 +17,15 @@ export default {
       <img :src="image" />
     </div>
     <div class="content-column">
-      <h2 class="mb-4">{{ title }}</h2>
-      <p class="mb-4">
+      <h2 :class="size" class="mb-4">{{ title }}</h2>
+      <p class="mb-4 text-secondary">
         {{ subtitle }}
       </p>
-      <router-link :to="link || ''">
-        <a href="" class="btn blue text-white">اعرف اكثر</a>
-      </router-link>
+      <div :class="showBtn ? '' : 'd-none'">
+        <router-link :to="link || ''">
+          <a href="" class="btn blue text-white">اعرف اكثر</a>
+        </router-link>
+      </div>
     </div>
   </div>
 </template>

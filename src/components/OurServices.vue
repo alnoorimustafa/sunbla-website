@@ -22,6 +22,7 @@ export default defineComponent({
     <div class="mt-5rem">
       <div class="row justify-content-around">
         <MyCard
+          :mute="true"
           :my-class="testClass"
           image="strategy.svg"
           title="التخطيط الاستراتيجي"
@@ -29,6 +30,7 @@ export default defineComponent({
         />
 
         <MyCard
+          :mute="true"
           :my-class="testClass"
           image="comms.svg"
           title="التواصل المستمر"
@@ -37,12 +39,14 @@ export default defineComponent({
       </div>
       <div class="row justify-content-around">
         <MyCard
+          :mute="true"
           :my-class="testClass"
           image="connect.svg"
           title="حلقة الوصل"
           subtitle="يمتلك المؤسسون علاقات اجتماعية واسعة وجيدة مع شخصيات مؤثرة اجتماعيا من الناحية الدينية والسياسية والاقتصادية وتسعى المؤسسة لتكون نقطة التقاء هذه العلاقات في خدمة الأمة"
         />
         <MyCard
+          :mute="true"
           :my-class="testClass"
           image="stats.svg"
           title="الدراسات والاحصائيات"

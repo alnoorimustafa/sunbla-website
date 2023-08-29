@@ -21,6 +21,10 @@ import MyFooter from './components/MyFooter.vue'
   font-family: bld;
   src: url(./assets/fonts/Alexandria-bold.ttf);
 }
+@font-face {
+  font-family: qrn;
+  src: url(./assets/fonts/Amiri-regular.ttf);
+}
 
 p,
 a {
@@ -82,5 +86,9 @@ p {
 
 .mt-5rem {
   margin-top: 5rem;
+}
+.quran {
+  font-family: qrn;
+  line-height: 2.5;
 }
 </style>

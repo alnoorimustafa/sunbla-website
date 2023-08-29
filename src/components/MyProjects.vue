@@ -18,6 +18,7 @@ export default defineComponent({
     <div class="mt-5rem">
       <div class="row justify-content-around">
         <ContentBlock
+          :showBtn="true"
           title="القرض الحسن"
           subtitle="نموذج تمويل إسلامي يهدف إلى دعم مشاريع الشباب الإنتاجية كبديل اخلاقي ومبتكر للقروض التقليدية."
           image="coin-wooden-table.jpg"
@@ -25,6 +26,7 @@ export default defineComponent({
         />
         <hr />
         <ContentBlock
+          :showBtn="true"
           title="منصة سنبلة"
           subtitle="منصة جمع التواقيع الإلكترونية تسهل تنظيم حملات جمع التواقيع عبر الإنترنت لدعم قضايا معينة وزيادة الوعي والتأثير الاجتماعي."
           image="app.png"
@@ -34,6 +36,7 @@ export default defineComponent({
       <hr />
       <div class="row justify-content-around">
         <ContentBlock
+          :showBtn="true"
           title="حوكمة التبرع الصحي"
           subtitle="تنظيم حركة تبرعات المجال الصحي ومنع هدرها في دهاليز المنظومة الصحية الحكومية والاهلية."
           image="drugs.jpg"
@@ -41,6 +44,7 @@ export default defineComponent({
         />
         <hr />
         <ContentBlock
+          :showBtn="true"
           title="الوصية الالكترونية"
           subtitle='انطلاقا من حديث النبي (ص) : "من مات بغير وصية مات ميتة جاهلية"، نعمل على مشروع الوصية الالكترونية لتوفر بديلا اسهل واكثر امانا لكتابة الوصية.'
           image="will.png"
