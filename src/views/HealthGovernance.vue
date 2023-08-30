@@ -1,5 +1,8 @@
 <template>
-  <div>
-    <h1>دكتور علي شد حيلك</h1>
+  <div class="container p-5">
+    <router-link to="/">
+      <button class="btn btn-dark">الرجوع</button>
+    </router-link>
+    <h1>قريبا ...</h1>
   </div>
 </template>

@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
 import AboutUsView from '@/views/AboutUsView.vue'
 import QarthHasan from '@/views/QarthHasan.vue'
@@ -13,9 +13,8 @@ import SupportView from '@/views/SupportView.vue'
 import ContactUs from '@/components/ContactUs.vue'
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHashHistory(),
   scrollBehavior(to, from, savedPosition) {
-    // always scroll to top
     return { top: 0 }
   },
   routes: [
