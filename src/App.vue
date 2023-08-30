@@ -28,7 +28,7 @@ import MyFooter from './components/MyFooter.vue'
 
 .no {
   width: 100%;
-  overflow-x: hidden; /* Prevent horizontal scroll */
+  overflow-x: hidden;
 }
 
 p,
