@@ -7,7 +7,7 @@
         <p class="fs-6">روابط السوشيال مديا</p>
       </div>
 
-      <div class="p-2">
+      <div class="pb-2 m-auto">
         <a
           href="https://www.facebook.com/people/%D9%85%D8%A4%D8%B3%D8%B3%D8%A9-%D8%B3%D9%86%D8%A8%D9%84%D8%A9-%D8%A7%D9%84%D8%AD%D9%8A%D8%A7%D8%A9/100080189049993/"
           class="me-4"
@@ -28,10 +28,12 @@
       <div class="container text-center text-md-start mt-5">
         <div class="row mt-3">
           <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4 text-center">
-            <a class="navbar-brand" href="#">
-              <img src="/logo.png" alt="Logo" width="50" />
+            <a class="navbar-brand">
+              <img src="/logo.png" alt="Logo" width="75" />
             </a>
-            <h6 class="my-4">مؤسسة سنبلة الحياة</h6>
+            <img src="/name.svg" alt="Logo" class="name d-block m-auto my-4" />
+            <span class="sub d-block">منظمة غير حكومية NGO</span>
+            <span class="sub">تاريخ التأسيس : 2021 | رقم الاجازة : 5092</span>
           </div>
         </div>
       </div>
@@ -42,3 +44,15 @@
     </div>
   </footer>
 </template>
+
+<style>
+.sub {
+  font-size: 10px;
+  font-family: med;
+}
+
+.name {
+  width: 50%;
+  height: auto;
+}
+</style>
