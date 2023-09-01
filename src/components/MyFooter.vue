@@ -3,11 +3,11 @@
     <section
       class="container d-flex justify-content-center justify-content-lg-between align-items-center border-bottom"
     >
-      <div class="me-5 d-none d-lg-block p-2">
+      <div class="d-none d-lg-block pb-2">
         <p class="fs-6">روابط السوشيال مديا</p>
       </div>
 
-      <div class="pb-2 m-auto">
+      <div class="pb-2">
         <a
           href="https://www.facebook.com/people/%D9%85%D8%A4%D8%B3%D8%B3%D8%A9-%D8%B3%D9%86%D8%A8%D9%84%D8%A9-%D8%A7%D9%84%D8%AD%D9%8A%D8%A7%D8%A9/100080189049993/"
           class="me-4"

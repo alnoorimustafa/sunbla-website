@@ -25,5 +25,17 @@
       الضروري للمشاريع المختلفة، مما يجعل الفكرة ممكنة وملهمة للجميع. وما زالوا يسعون بكل حماس
       وتفاني لدعم الأفراد في تحقيق أحلامهم وتطوير مشاريعهم.
     </p>
+    <hr class="my-5" />
+    <div class="col-lg-4 col-md-6 col-sm-12 m-auto text-center">
+      <h1 class="fs-5 my-5">شهادة التسجيل</h1>
+      <img src="/certificate.jpg" alt="certificate" />
+    </div>
   </div>
 </template>
+
+<style scoped>
+img {
+  width: 100%;
+  height: auto;
+}
+</style>
