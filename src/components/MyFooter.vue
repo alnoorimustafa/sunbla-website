@@ -7,19 +7,21 @@
         <p class="fs-6">روابط السوشيال مديا</p>
       </div>
 
-      <div class="pb-2">
+      <div class="p-2">
         <a
           href="https://www.facebook.com/people/%D9%85%D8%A4%D8%B3%D8%B3%D8%A9-%D8%B3%D9%86%D8%A8%D9%84%D8%A9-%D8%A7%D9%84%D8%AD%D9%8A%D8%A7%D8%A9/100080189049993/"
-          class="me-4"
+          class="p-2"
         >
           <i class="text-secondary fs-3 lab la-facebook"></i>
         </a>
-        <a href="https://www.instagram.com/sunbla_alhayat/?igshid=YmMyMTA2M2Y=" class="me-4">
+        <a href="https://www.instagram.com/sunbla_alhayat/?igshid=YmMyMTA2M2Y=" class="p-2">
           <i class="text-secondary fs-3 la la-instagram"></i>
         </a>
-        <a href="" class="me-4"> <i class="text-secondary fs-3 la la-youtube"></i> </a>
-        <a href="tel:+9647854041609" class="me-4">
-          <i class="text-secondary fs-3 la la-phone"></i>
+        <a href="https://www.youtube.com/channel/UCEYuc-D4zX5BUmTYq5xXK4A" class="p-2">
+          <i class="text-secondary fs-3 la la-youtube"> </i>
+        </a>
+        <a href="tel:+9647854041609" class="p-2">
+          <i class="text-secondary fs-3 la la-phone-alt"></i>
         </a>
       </div>
     </section>

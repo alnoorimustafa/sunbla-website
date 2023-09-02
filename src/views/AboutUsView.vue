@@ -26,6 +26,18 @@
       وتفاني لدعم الأفراد في تحقيق أحلامهم وتطوير مشاريعهم.
     </p>
     <hr class="my-5" />
+
+    <div class="video col-lg-4 col-md-12 col-sm-12 m-auto text-center w-100">
+      <h1 class="fs-5 my-5">فديو تعريفي</h1>
+      <iframe
+        src="https://www.youtube.com/embed/jmsIb63AOrY?si=t71s4TYsUdnkDwF3"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+    </div>
+    <hr class="my-5" />
     <div class="col-lg-4 col-md-6 col-sm-12 m-auto text-center">
       <h1 class="fs-5 my-5">شهادة التسجيل</h1>
       <img src="/certificate.jpg" alt="certificate" />
@@ -37,5 +49,16 @@
 img {
   width: 100%;
   height: auto;
+}
+iframe {
+  width: 560px;
+  height: 315px;
+}
+
+@media screen and (max-width: 775px) {
+  iframe {
+    height: auto;
+    width: auto;
+  }
 }
 </style>
