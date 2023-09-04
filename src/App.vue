@@ -32,7 +32,8 @@ import MyFooter from './components/MyFooter.vue'
 }
 
 p,
-a {
+a,
+span {
   font-family: med;
   line-height: 1.5;
 }

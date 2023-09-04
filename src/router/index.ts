@@ -11,6 +11,7 @@ import AppPrivacy from '@/views/AppPrivacy.vue'
 import AppEULA from '@/views/AppEULA.vue'
 import SupportView from '@/views/SupportView.vue'
 import ContactUs from '@/components/ContactUs.vue'
+import PetitionView from '@/views/PetitionView.vue'
 
 const router = createRouter({
   history: createWebHashHistory(),
@@ -65,6 +66,10 @@ const router = createRouter({
     {
       path: '/support',
       component: SupportView
+    },
+    {
+      path: '/petition/:id',
+      component: PetitionView
     }
   ]
 })
