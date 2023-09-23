@@ -177,7 +177,7 @@ export default {
           </span>
         </p>
         <hr class="my-5" />
-        <div class="my-5 text-center" v-if="!signing && !done && participated === 'false'">
+        <div class="my-5 text-center" v-if="!signing && !done && participated !== 'true'">
           <input
             maxlength="11"
             minlength="11"
