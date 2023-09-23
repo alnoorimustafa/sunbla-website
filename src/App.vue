@@ -2,13 +2,15 @@
 import MyHeader from './components/MyHeader.vue'
 
 import MyFooter from './components/MyFooter.vue'
+
+import layoutStore from './utilities/layoutStore'
 </script>
 
 <template>
   <div dir="rtl" lang="ar" class="no">
-    <MyHeader />
+    <MyHeader v-if="layoutStore.showHeader" />
     <router-view />
-    <MyFooter />
+    <MyFooter v-if="layoutStore.showFooter" />
   </div>
 </template>
 
