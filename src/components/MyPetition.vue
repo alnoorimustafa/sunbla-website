@@ -1,70 +1,137 @@
 <script lang="ts">
+import api from '../utilities/api'
 interface petition {
   id: number
-  attributes: {
-    hideName: boolean
-    description: string
-    title: string
+  hideName: boolean
+  description: string
+  title: string
+  createdAt: string
+  updatedAt: string
+  publishedAt: string
+  image: string
+  governorate: {
+    id: string
+    arName: string
+    enName: string
+    isCountry: boolean
     createdAt: string
     updatedAt: string
     publishedAt: string
-    image: {
-      data: string
-    }
-    governorate: {
-      data: {
-        id: number
-        attributes: {
-          arName: string
-        }
-      }
-    }
-    category: {
-      data: {
-        id: number
-        attributes: {
-          arName: string
-        }
-      }
-    }
-    petition_stat: {
-      data: {
-        id: number
-        attributes: {
-          views: string
-          shares: string
-        }
+  }
+  category: {
+    id: number
+    arName: string
+    enName: string
+    createdAt: string
+    updatedAt: string
+    publishedAt: string
+  }
+  creator: string
+  signers: number
+  petition_stat: {
+    data: {
+      id: number
+      attributes: {
+        views: string
+        shares: string
       }
     }
   }
+  content_reports: string
+  createdBy: string
+  updatedBy: string
 }
 
 export default {
   data() {
     return {
       petitionData: null as petition | null,
-      loading: false
+      loading: false,
+      phone: '',
+      error: '',
+      clicked: false,
+      signing: false,
+      done: false,
+      participated: 'false'
+    }
+  },
+  computed: {
+    international() {
+      return '+964' + this.phone.slice(1)
+    },
+    isValidPhoneNumber() {
+      // Use a regular expression to validate the phone number
+      const phoneNumberPattern = /^07\d{9}$/
+      return phoneNumberPattern.test(this.phone)
     }
   },
   mounted() {
     // Fetch data when the component is mounted
     this.fetchPetitionData()
+    this.participated = localStorage.getItem('participated')
   },
   methods: {
-    fetchPetitionData() {
+    async handleClick() {
+      if (this.phone.length > 11 || this.phone.length < 11) {
+        this.error = '  enter valid number  '
+        return
+      }
+      this.signing = true
+      this.clicked = true
+      const existUser = await api.get(`users?filters[username][$eq]=${this.phone}`)
+      try {
+        if (existUser.data.length > 0) {
+          const newPetition = await api.put(`petitions/${this.$route.params.id}`, {
+            data: {
+              signers: {
+                connect: [existUser.data[0].id]
+              }
+            }
+          })
+          if (newPetition.ok) {
+            this.done = true
+            localStorage.setItem('participated', 'true')
+          } else {
+            this.error = 'please retry again later'
+          }
+        } else {
+          const res = await api.post(`users`, {
+            username: this.phone,
+            email: `${this.phone}@petition.com`,
+            password: this.phone,
+            role: 2
+          })
+          const newPetition = await api.put(`petitions/${this.$route.params.id}`, {
+            data: {
+              signers: {
+                connect: [res.data.id]
+              }
+            }
+          })
+          if (newPetition.ok) {
+            this.done = true
+            localStorage.setItem('participated', 'true')
+          } else {
+            this.error = 'please retry again later'
+          }
+        }
+        this.signing = false
+      } catch (error) {
+        console.log(error)
+      }
+    },
+    async fetchPetitionData() {
       this.loading = true
-      fetch(`https://sunbla.azurewebsites.net/api/petitions/${this.$route.params.id}?populate=*`)
+      await api
+        .get(`petitions/${this.$route.params.id}?populate=*`)
         .then((res) => {
           this.loading = false
           if (res.status === 200) {
-            return res.json()
+            this.petitionData = res.data as petition
+            console.log(res.data)
           } else {
             throw new Error('Failed to fetch data')
           }
-        })
-        .then((data) => {
-          console.log(data)
-          this.petitionData = data.data as petition
         })
         .catch((error) => console.error(error))
     }
@@ -80,52 +147,63 @@ export default {
           <h1 class="fs-2">حملة</h1>
           <span class="fs-6 mx-2">رقم : {{ petitionData?.id }}</span>
         </div>
+        <h3 class="text-center text-green">
+          {{ petitionData.title }}
+        </h3>
         <p>
-          <span class="text-green">المنطقة :</span>
-          <span class="mx-1">
-            {{ petitionData?.attributes?.governorate.data.attributes.arName }}
-          </span>
-        </p>
-        <p>
-          <span class="text-green">الفئة :</span>
-          <span class="mx-1">
-            {{ petitionData?.attributes?.category.data.attributes.arName }}
-          </span>
-        </p>
-        <p>
-          <span class="text-green">العنوان :</span>
-          <span class="mx-1">
-            {{ petitionData?.attributes?.title }}
-          </span>
+          <span class="text-green">المشاركون :</span>
+          <span class="mx-1"> {{ petitionData.signers }} </span>
         </p>
         <p>
           <span class="text-green">الوصف :</span>
-          <span class="mx-1">
-            {{ petitionData?.attributes?.description }}
-          </span>
+          <span class="mx-1"> {{ petitionData.description }} </span>
         </p>
         <p>
-          <span class="text-green">المشاهدات :</span>
-          <span class="mx-1">
-            {{ petitionData?.attributes.petition_stat.data.attributes.views }}
-          </span>
+          <span class="text-green">المنطقة :</span>
+          <span class="mx-1"> {{ petitionData.governorate.arName }} </span>
         </p>
         <p>
-          <span class="text-green">المشاركات :</span>
-          <span class="mx-1">
-            {{ petitionData?.attributes?.petition_stat.data.attributes.shares }}
-          </span>
+          <span class="text-green">الفئة :</span>
+          <span class="mx-1"> {{ petitionData.category.arName }} </span>
         </p>
         <p>
           <span class="text-green">تاريخ النشر :</span>
           <span class="mx-1">
             {{
-              petitionData?.attributes?.createdAt
-                ? new Date(petitionData?.attributes?.publishedAt).toLocaleDateString()
+              petitionData?.createdAt
+                ? new Date(petitionData?.publishedAt).toLocaleDateString()
                 : ''
             }}
           </span>
         </p>
+        <hr class="my-5" />
+        <div class="my-5 text-center" v-if="!signing && !done && participated === 'false'">
+          <input
+            maxlength="11"
+            minlength="11"
+            v-model="phone"
+            type="text"
+            class="form-control mb-4"
+            placeholder="رقم الموبايل"
+          />
+
+          <p v-if="!isValidPhoneNumber && clicked" style="color: red">
+            الرجاء ادخال رقم موبايل صحيح يبدأ ب07 ويتكون من 11 رقم
+          </p>
+          <div v-if="error" class="text-center text-danger">
+            <p>
+              {{ error }}
+            </p>
+          </div>
+          <button @click="handleClick" class="btn green text-white">التوقيع على الحملة</button>
+        </div>
+        <div v-else-if="signing && !done" class="text-center">
+          <p>الرجاء الانتظار ...</p>
+        </div>
+        <div v-else-if="done || participated === 'true'" class="text-center text-green">
+          <p>تم المشاركة في الحملة بنجاح</p>
+          <p>شكرا لك</p>
+        </div>
       </div>
       <div class="text-center" v-if="!petitionData && !loading">
         <h1 class="fs-2">لا يمكن ايجاد الحملة</h1>
