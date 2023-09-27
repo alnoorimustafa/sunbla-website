@@ -42,6 +42,13 @@ interface petition {
   updatedBy: string
 }
 
+interface Res {
+  data: [Data]
+}
+interface Data {
+  id: string
+}
+
 export default {
   data() {
     return {
@@ -68,7 +75,12 @@ export default {
   mounted() {
     // Fetch data when the component is mounted
     this.fetchPetitionData()
-    this.participated = localStorage.getItem('participated')
+    try {
+      this.participated = localStorage.getItem(`${this.$route.params.id}`) as string
+      console.log(this.participated === this.$route.params.id)
+    } catch (error) {
+      console.log(error)
+    }
   },
   methods: {
     async handleClick() {
@@ -78,7 +90,7 @@ export default {
       }
       this.signing = true
       this.clicked = true
-      const existUser = await api.get(`users?filters[username][$eq]=${this.phone}`)
+      const existUser = (await api.get(`users?filters[username][$eq]=${this.phone}`)) as Res
       try {
         if (existUser.data.length > 0) {
           const newPetition = await api.put(`petitions/${this.$route.params.id}`, {
@@ -90,7 +102,8 @@ export default {
           })
           if (newPetition.ok) {
             this.done = true
-            localStorage.setItem('participated', 'true')
+            localStorage.setItem(`${this.$route.params.id}`, `${this.$route.params.id}`)
+            this.fetchPetitionData()
           } else {
             this.error = 'please retry again later'
           }
@@ -101,16 +114,20 @@ export default {
             password: this.phone,
             role: 2
           })
+          const data = res.data as { id: string }
+          if (data.id) return
           const newPetition = await api.put(`petitions/${this.$route.params.id}`, {
             data: {
               signers: {
-                connect: [res.data.id]
+                connect: [data.id]
               }
             }
           })
           if (newPetition.ok) {
+            console.log('done')
             this.done = true
-            localStorage.setItem('participated', 'true')
+            localStorage.setItem(`${this.$route.params.id}`, `${this.$route.params.id}`)
+            this.fetchPetitionData()
           } else {
             this.error = 'please retry again later'
           }
@@ -176,7 +193,7 @@ export default {
             }}
           </span>
         </p>
-        <div class="my-5 text-center" v-if="!signing && !done && participated !== 'true'">
+        <div class="my-5 text-center" v-if="!signing && !done && participated !== $route.params.id">
           <input
             maxlength="11"
             minlength="11"
@@ -199,7 +216,7 @@ export default {
         <div v-else-if="signing && !done" class="text-center">
           <p>الرجاء الانتظار ...</p>
         </div>
-        <div v-else-if="done || participated === 'true'" class="text-center text-green">
+        <div v-else-if="done || participated === $route.params.id" class="text-center text-green">
           <p>تم المشاركة في الحملة بنجاح</p>
           <p>شكرا لك</p>
         </div>
