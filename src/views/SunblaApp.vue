@@ -8,7 +8,7 @@ import DownloadApp from '../components/DownloadApp.vue'
     <router-link to="/">
       <button class="btn btn-dark mb-5">الرجوع</button>
     </router-link>
-    <h1 class="fs-1 text-center mb-4">منصة سنبلة</h1>
+    <h1 class="fs-1 text-blue text-center mb-4">منصة سنبلة</h1>
     <p>
       في عصر يتسم بالتقدم التكنولوجي والتركيز المتزايد على المشاركة المدنية، يشكل تطبيق حملات جمع
       التواقيع ثورة في الطريقة التي يعبر بها الناس عن مخاوفهم، ويدافعون عن التغيير، ويحشدون الدعم

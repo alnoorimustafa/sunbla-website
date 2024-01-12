@@ -1,6 +1,9 @@
 <template>
-  <div class="text-center vh-100">
+  <div class="container p-5">
+    <router-link to="/">
+      <button class="btn btn-dark">الرجوع</button>
+    </router-link>
     <h1 class="fs-2 my-5">الوصية الالكترونية</h1>
-    <h1 class="fs-4 my-5">قريبا ...</h1>
+    <h4 class="fs-1 text-center text-blue mt-5 mb-4">قريبا ...</h4>
   </div>
 </template>
