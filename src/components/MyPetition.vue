@@ -77,7 +77,6 @@ export default {
     this.fetchPetitionData()
     try {
       this.participated = localStorage.getItem(`${this.$route.params.id}`) as string
-      console.log(this.participated === this.$route.params.id)
     } catch (error) {
       console.log(error)
     }
@@ -145,7 +144,6 @@ export default {
           this.loading = false
           if (res.status === 200) {
             this.petitionData = res.data as petition
-            console.log(res.data.image.url)
           } else {
             throw new Error('Failed to fetch data')
           }
