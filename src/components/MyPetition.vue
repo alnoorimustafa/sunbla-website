@@ -1,4 +1,5 @@
 <script lang="ts">
+import { log } from 'console'
 import api from '../utilities/api'
 interface petition {
   id: number
@@ -102,7 +103,7 @@ export default {
           if (newPetition.ok) {
             this.done = true
             localStorage.setItem(`${this.$route.params.id}`, `${this.$route.params.id}`)
-            this.fetchPetitionData()
+            this.fetchPetitionData(existUser)
           } else {
             this.error = 'please retry again later'
           }
@@ -114,7 +115,7 @@ export default {
             role: 2
           })
           const data = res.data as { id: string }
-          if (data.id) return
+          if (!data.id) return
           const newPetition = await api.put(`petitions/${this.$route.params.id}`, {
             data: {
               signers: {
@@ -122,6 +123,15 @@ export default {
               }
             }
           })
+          const stats_id = this.petitionData?.petition_stat
+          api.put(`petition-stats/${stats_id}`, {
+            data: {
+              viewers: {
+                connect: [data.id]
+              }
+            }
+          })
+
           if (newPetition.ok) {
             console.log('done')
             this.done = true
