@@ -1,5 +1,4 @@
 <script lang="ts">
-import { log } from 'console'
 import api from '../utilities/api'
 interface petition {
   id: number
@@ -103,7 +102,7 @@ export default {
           if (newPetition.ok) {
             this.done = true
             localStorage.setItem(`${this.$route.params.id}`, `${this.$route.params.id}`)
-            this.fetchPetitionData(existUser)
+            this.fetchPetitionData()
           } else {
             this.error = 'please retry again later'
           }
