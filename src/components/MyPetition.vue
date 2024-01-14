@@ -8,7 +8,7 @@ interface petition {
   createdAt: string
   updatedAt: string
   publishedAt: string
-  image: string
+  image: { url: string }
   governorate: {
     id: string
     arName: string
@@ -145,7 +145,7 @@ export default {
           this.loading = false
           if (res.status === 200) {
             this.petitionData = res.data as petition
-            console.log(res.data)
+            console.log(res.data.image.url)
           } else {
             throw new Error('Failed to fetch data')
           }
@@ -167,6 +167,9 @@ export default {
         <h3 class="text-center text-green">
           {{ petitionData.title }}
         </h3>
+        <div class="imageContainer my-5">
+          <img :src="petitionData.image?.url" class="" alt="" />
+        </div>
         <p>
           <span class="text-green">المشاركون :</span>
           <span class="mx-1"> {{ petitionData.signers }} </span>
@@ -230,3 +233,18 @@ export default {
     </div>
   </div>
 </template>
+
+<style scoped>
+.imageContainer {
+  width: 300px;
+  height: 300px;
+  margin: auto;
+}
+img {
+  border: 1px;
+  border-style: solid;
+  border-color: #5a7830;
+  border-radius: 10px;
+  height: 100%;
+}
+</style>
