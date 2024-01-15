@@ -203,6 +203,9 @@ export default {
             }}
           </span>
         </p>
+        <p class="text-green d-inline">نرجوا ادخال رقم موبايلك للتأكد من انك لست روبوت</p>
+        -
+        <p class="text-green d-inline">رقم الموبايل سيبقى سريا ولا يمكن لاحد الاطلاع عليه</p>
         <div class="my-5 text-center" v-if="!signing && !done && participated !== $route.params.id">
           <input
             maxlength="11"
@@ -212,7 +215,6 @@ export default {
             class="form-control mb-4"
             placeholder="رقم الموبايل"
           />
-
           <p v-if="!isValidPhoneNumber && clicked" style="color: red">
             الرجاء ادخال رقم موبايل صحيح يبدأ ب07 ويتكون من 11 رقم
           </p>
@@ -221,7 +223,7 @@ export default {
               {{ error }}
             </p>
           </div>
-          <button @click="handleClick" class="btn green text-white">التوقيع على الحملة</button>
+          <button @click="handleClick" class="btn green text-white">المشاركة في الحملة</button>
         </div>
         <div v-else-if="signing && !done" class="text-center">
           <p>الرجاء الانتظار ...</p>
