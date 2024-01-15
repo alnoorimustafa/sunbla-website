@@ -107,18 +107,16 @@ export default {
             this.error = 'please retry again later'
           }
         } else {
-          const res = await api.post(`users`, {
-            username: this.phone,
-            email: `${this.phone}@petition.com`,
-            password: this.phone,
-            role: 2
+          const res = await api.post(`create-personal-user`, {
+            name: this.phone,
+            phoneNumber: this.phone
           })
-          const data = res.data as { id: string }
-          if (!data.id) return
+          const data = res.data as { owner: { id: string } }
+          if (!data.owner.id) return
           const newPetition = await api.put(`petitions/${this.$route.params.id}`, {
             data: {
               signers: {
-                connect: [data.id]
+                connect: [data.owner.id]
               }
             }
           })
@@ -126,7 +124,7 @@ export default {
           api.put(`petition-stats/${stats_id}`, {
             data: {
               viewers: {
-                connect: [data.id]
+                connect: [data.owner.id]
               }
             }
           })
