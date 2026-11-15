@@ -2,6 +2,7 @@
   "name": "sunbla-web",
   "version": "1.0.0",
   "private": true,
+  "packageManager": "yarn@1.22.22",
   "scripts": {
     "deploy": "vite build && echo sunbla.org > ./dist/CNAME && gh-pages -d dist",
     "dev": "vite",
